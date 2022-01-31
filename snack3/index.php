@@ -60,23 +60,39 @@ $posts = [
 </head>
 <body>
     <h1>Snack 3</h1>
-    <ul>
+    <ul style="list-style: none;">
         <?php
         // STAMPA DEI POST
         // CICLIAMO SU TUTTO $POSTS
         foreach ($posts as $arrayPost) {
             foreach ($arrayPost as $post) {
         ?>
-        <li>
+        <li style="border: 2px solid black;text-align:center;">
             <?php
             foreach ($post as $key => $date) {
-                echo $post[$key];
-                echo '<br>';
-            }
-            echo '<br>';
+            ?>
+            <div class="post-<?=$key?>">
+                <?php
+                if($key==='title') {
+                    ?>
+                    <h2><?=$post[$key]?></h2>
+                    <?php
+                } elseif($key==='author') {
+                    ?>
+                    <h3><?=$post[$key]?></h3>
+                <?php
+                } elseif($key==='text'){
+                    ?>
+                    <p><?=$post[$key]?></p>
+                <?php
+                }
             }
         }
-            ?>
+               ?>
+            </div>
+        <?php
+        }
+        ?>
         </li>
     </ul>
 </body>
