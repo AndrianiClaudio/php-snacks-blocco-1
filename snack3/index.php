@@ -60,40 +60,47 @@ $posts = [
 </head>
 <body>
     <h1>Snack 3</h1>
-    <ul style="list-style: none;">
-        <?php
-        // STAMPA DEI POST
-        // CICLIAMO SU TUTTO $POSTS
-        foreach ($posts as $arrayPost) {
-            foreach ($arrayPost as $post) {
+    <?php
+    // STAMPA DEI POST
+    // CICLIAMO SU TUTTO $POSTS
+    foreach ($posts as $post_date => $arrayPost) {
         ?>
-        <li style="border: 2px solid black;text-align:center;">
+        <section>
+            <h2 style="color:red";><?=$post_date?></h2>
             <?php
-            foreach ($post as $key => $date) {
+            foreach ($arrayPost as $post) {?>
+    
+            <?php
+            foreach ($post as $attr => $date) {
             ?>
-            <div class="post-<?=$key?>">
-                <?php
-                if($key==='title') {
-                    ?>
-                    <h2><?=$post[$key]?></h2>
-                    <?php
-                } elseif($key==='author') {
-                    ?>
-                    <h3><?=$post[$key]?></h3>
-                <?php
-                } elseif($key==='text'){
-                    ?>
-                    <p><?=$post[$key]?></p>
+                <div class="post">
+                    <div class="post-<?=$attr?>">
+                        <?php
+                        if($attr==='title') {
+                        ?>
+                            <h3><?=$date?></h3>
+                            <?php
+                        } elseif($attr==='author') {
+                            ?>
+                            <h4><?=$date?></h4>
+                        <?php
+                        } elseif($attr==='text'){
+                        ?>
+                            <p><?=$date?></p>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
                 <?php
                 }
             }
-        }
-               ?>
+                ?>
             </div>
-        <?php
-        }
-        ?>
-        </li>
-    </ul>
+        </section>
+    <?php
+    }
+    ?>
+    
 </body>
 </html>
