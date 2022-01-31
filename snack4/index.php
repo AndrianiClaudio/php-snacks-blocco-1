@@ -5,6 +5,15 @@ CONSEGNA
 Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 ========
 */
+$array = [];
+//n numeri da generare
+$n = 15;
+// minimo e massimo numeri generabili
+$min = 0;
+$max = 50;
+for ($i=0; $i < $n ; $i++) { 
+    echo '<div>',rand($min,$max),'</div>';
+}
 ?>
 
 <!DOCTYPE html>
