@@ -38,9 +38,15 @@ if($max >= $n - 1) {
     <ol>
         <?php
         foreach ($array as $num) {
-            echo '<li>';
-            echo $num;
-            echo '</li>';
+        ?>
+        <li>
+            <span>
+                <?php
+                echo $num;
+                ?>
+            </span>
+        </li>
+        <?php
         }
         ?>
     </ol>
