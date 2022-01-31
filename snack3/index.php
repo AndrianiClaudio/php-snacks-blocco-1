@@ -68,32 +68,33 @@ $posts = [
         <section>
             <h2 style="color:red";><?=$post_date?></h2>
             <?php
-            foreach ($arrayPost as $post) {?>
+            foreach ($arrayPost as $key => $post) {?>
+            <div class="post-<?=$key?>">
     
             <?php
             foreach ($post as $attr => $date) {
             ?>
-                <div class="post">
-                    <div class="post-<?=$attr?>">
+                <div class="post-<?=$attr?>">
+                    <?php
+                    if($attr==='title') {
+                    ?>
+                        <h3><?=$date?></h3>
                         <?php
-                        if($attr==='title') {
+                    } elseif($attr==='author') {
                         ?>
-                            <h3><?=$date?></h3>
-                            <?php
-                        } elseif($attr==='author') {
-                            ?>
-                            <h4><?=$date?></h4>
-                        <?php
-                        } elseif($attr==='text'){
-                        ?>
-                            <p><?=$date?></p>
-                        <?php
-                        }
-                        ?>
-                    </div>
+                        <h4><?=$date?></h4>
+                    <?php
+                    } elseif($attr==='text'){
+                    ?>
+                        <p><?=$date?></p>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <?php
-                }
+                }?>
+                </div>
+            <?php
             }
                 ?>
             </div>
