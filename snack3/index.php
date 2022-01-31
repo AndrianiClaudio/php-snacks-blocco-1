@@ -7,19 +7,61 @@ Ogni array figlio avrà
     chiave: data (DD-MM-YYYY es 01-01-2007)
     valore: array di post associati alla data. 
 Stampare ogni data con i relativi post.
-----------------
-ARRAY DI ESEMPIO
-----------------
-$posts = [
-    '10/01/2019' => [
-        'title' => 'Post'
-        'author' => 'Claudio Andriani'
-        'text' => 'Text'
-    ],...
-]
-----------------
 ========
 */
+// ARRAY DI ARRAY CONTENTE TUTTI I POST
+$posts = [
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
+
+// CICLIAMO SU TUTTO $POSTS
+foreach ($posts as $key => $arrayPost) {
+    // var_dump($arrayPost);
+    // $keys[] = $key;
+    // CICLIAMO OGNI ARRAY CON KEY=DATA
+    foreach ($arrayPost as $post) {
+        var_dump($post);
+    }
+}
+// for ($i=0; $i < count($keys); $i++) { 
+//     echo $keys[$i];
+//     echo '<br>';
+// }
 ?>
 
 <!DOCTYPE html>
@@ -32,5 +74,6 @@ $posts = [
 </head>
 <body>
     <h1>Snack 3</h1>
+
 </body>
 </html>
