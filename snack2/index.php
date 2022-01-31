@@ -12,9 +12,18 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 ========
 */
 // VARIABILI ACQUISITE TRAMITE GET (name,mail,age)
-$name = $_GET['name'];
-$mail = $_GET['mail'];
-$age = $_GET['age'];
+$name = '';
+if(empty($_GET['name']) === false) {
+    $name = $_GET['name'];
+}
+$mail = '';
+if(empty($_GET['mail']) === false) {
+    $mail = $_GET['mail'];
+}
+$age = '';
+if(empty($_GET['age']) === false) {
+    $age = $_GET['age'];
+}
 // MESSAGGIO STAMPA, default: "Accesso negato"
 $message = "Accesso negato";
 // VERIFICA NAME: lunghezza > 3 caratteri 
