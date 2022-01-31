@@ -66,27 +66,27 @@ $posts = [
     foreach ($posts as $post_date => $arrayPost) {
         ?>
         <section>
-            <h2 style="color:red";><?=$post_date?></h2>
+            <h2 style="color:red"><?=$post_date?></h2>
             <?php
             foreach ($arrayPost as $key => $post) {?>
             <div class="post-<?=$key?>">
     
             <?php
-            foreach ($post as $attr => $date) {
+            foreach ($post as $attr => $value) {
             ?>
                 <div class="post-<?=$attr?>">
                     <?php
                     if($attr==='title') {
                     ?>
-                        <h3><?=$date?></h3>
+                        <h3><?=$value?></h3>
                         <?php
                     } elseif($attr==='author') {
                         ?>
-                        <h4><?=$date?></h4>
+                        <h4><?=$value?></h4>
                     <?php
                     } elseif($attr==='text'){
                     ?>
-                        <p><?=$date?></p>
+                        <p><?=$value?></p>
                     <?php
                     }
                     ?>
