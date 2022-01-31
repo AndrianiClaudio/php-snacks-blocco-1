@@ -7,12 +7,21 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 */
 $array = [];
 //n numeri da generare
-$n = 15;
+$n = 13;
 // minimo e massimo numeri generabili
 $min = 0;
 $max = 50;
-for ($i=0; $i < $n ; $i++) { 
-    echo '<div>',rand($min,$max),'</div>';
+//ricordarsi sempre che n deve essere maggiore o uguale a max
+if($max >= $n - 1) {
+    //generazione e push in array dei numeri casuali
+    for ($i=0; $i < $n ; $i++) { 
+        $num = rand($min,$max);
+        while(in_array($num,$array)) {
+            $num = rand($min,$max);
+        }
+        $array [] = $num;
+    }
+    asort($array);
 }
 ?>
 
@@ -26,5 +35,14 @@ for ($i=0; $i < $n ; $i++) {
 </head>
 <body>
     <h1>Snack 4</h1>
+    <ol>
+        <?php
+        foreach ($array as $num) {
+            echo '<li>';
+            echo $num;
+            echo '</li>';
+        }
+        ?>
+    </ol>
 </body>
 </html>
