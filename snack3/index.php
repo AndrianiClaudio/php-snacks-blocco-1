@@ -48,20 +48,6 @@ $posts = [
         ]
     ],
 ];
-
-// CICLIAMO SU TUTTO $POSTS
-foreach ($posts as $key => $arrayPost) {
-    // var_dump($arrayPost);
-    // $keys[] = $key;
-    // CICLIAMO OGNI ARRAY CON KEY=DATA
-    foreach ($arrayPost as $post) {
-        var_dump($post);
-    }
-}
-// for ($i=0; $i < count($keys); $i++) { 
-//     echo $keys[$i];
-//     echo '<br>';
-// }
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +60,24 @@ foreach ($posts as $key => $arrayPost) {
 </head>
 <body>
     <h1>Snack 3</h1>
-
+    <ul>
+        <?php
+        // STAMPA DEI POST
+        // CICLIAMO SU TUTTO $POSTS
+        foreach ($posts as $arrayPost) {
+            foreach ($arrayPost as $post) {
+        ?>
+        <li>
+            <?php
+            foreach ($post as $key => $date) {
+                echo $post[$key];
+                echo '<br>';
+            }
+            echo '<br>';
+            }
+        }
+            ?>
+        </li>
+    </ul>
 </body>
 </html>
